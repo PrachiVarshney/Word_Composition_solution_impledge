@@ -1,20 +1,22 @@
 # Word_Composition_solution_impledge
 
-1. This program reads provided files Input_01.txt and Input_02.txt, containing alphabetically sorted words list (one word per line, no spaces, all lower case).
+Input Files: The program expects two input files Input_01.txt and Input_02.txt containing alphabetically sorted words list (one word per line, all lower case).
 
-2. It identifies and displays the following data in the console:
+Output: The program will display the following information:
 
 Longest compounded word
 Second longest compounded word
-Time taken to process the input file
+Time taken to process the input files
 
-# Approach:
+# Design Approach:
 
-To address this problem, I employed a Trie (prefix tree) data structure. A Trie allows for efficient searching of words character by character. It provides an O(m) search time for a word, where 'm' is the word length. We chose a Trie to keep track of all valid words that can be part of a compound word conveniently.
+The program uses a Trie (prefix tree) data structure to efficiently store and search for words.
 
-To determine if a word is a compound word, the program iterates through the characters of the word, searching for complete words in the Trie. It recursively checks whether the remaining part is also a valid word or a compound word.
+It reads the words from the input file and inserts them into the Trie, ensuring all words are in lowercase and without any special characters.
 
-The worst-case time complexity to check whether a word is a compound word is O(m^2), where 'm' is the word length. For 'n' words, the time complexity is O(n * m^2). Fortunately, the word length 'm' is generally small for a large dataset, making the program efficient for practical use.
+It then traverses the Trie to identify compound words by checking if a word can be constructed by concatenating shorter words from the Trie. 
+It does this by recursively breaking down each word character by character.
 
+The program calculates the time taken for processing using the GetProcessTimes function, measuring CPU execution time.
 
    
